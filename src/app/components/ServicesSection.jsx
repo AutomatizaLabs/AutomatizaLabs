@@ -8,13 +8,11 @@ const TAB_DATA = [
     title: "Servicos",
     id: "servicos",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Sites</li>
-        <li>Aplicativos</li>
-        <li>Softweres</li>
-        <li>Instalações</li>
-        <li>Automação</li>
-        <li>Servios Personalizados</li>
+      <ul className="list-disc pl-2 text-lg">
+        <li>Sites Personalizados</li> 
+        <li>Sites Pre-Moldados</li>
+        <li>Testes Automatizados</li>
+        <li>Atualização de Sites</li>
       </ul>
     ),
   },
@@ -22,9 +20,10 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+      <ul className="list-disc pl-2 text-lg">
+        <li>Adaptação de Sites para Celulares</li>
+        <li>Aplicações para Celular</li>
+        <li>Instalação de Softwares</li>
       </ul>
     ),
   },
@@ -32,9 +31,23 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+      <ul className="list-disc pl-2 text-lg">
+        <li>Softwares para controle</li>
+        <li>Softwares de Backup</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Automações",
+    id: "automations",
+    content: (
+      <ul className="list-disc pl-2 text-lg">
+        <li>Automação de Páginas</li>
+        <li>Testes Automatizados</li>
+        <li>Automação de Emails</li>
+        <li>Automação de Postagens</li>
+        <li>Chat Bots</li>
+
       </ul>
     ),
   },
@@ -55,14 +68,13 @@ const ServicesSection = () => {
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image src="/images/about-image.png" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-black mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-black mb-4">Serviços Prestados</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+           Verifique nossos serviços disponíveis abaixo, 
+           aqui você pode escolher o que mais lhe atrai e 
+           ver os valores de cada serviço e pacotes completos,
+           podendo montar uma ordem mais completa e customizada
+           para seus fins pessoais!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -70,24 +82,31 @@ const ServicesSection = () => {
               active={tab === "servicos"}
             >
               {" "}
-              Serviços{" "}
+              Web{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               {" "}
-              Education{" "}
+              Mobile{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
               {" "}
-              Certifications{" "}
+              Softweres{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("automations")}
+              active={tab === "automations"}
+            >
+              {" "}
+              Automações{" "}
             </TabButton>
           </div>
-          <div className="mt-8">
+          <div className="mt-4">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
