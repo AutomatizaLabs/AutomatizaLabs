@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="footer border z-10 border-t-[#121212] bg-[#121212] border-l-transparent border-r-transparent text-white">
       <div className="container p-12 flex justify-between">
-        <span>LOGO</span>
-        <p className="text-slate-600">All rights reserved.</p>
+        <span>AutomatizaLabs</span>
+        <p className="text-slate-600">Todos os Direitos reservados.</p>
       </div>
     </footer>
   );
