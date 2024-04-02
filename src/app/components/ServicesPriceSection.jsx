@@ -5,26 +5,9 @@ import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
 const projectsData = [
+  
   {
     id: 1,
-    title: "Website One Page",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 2,
-    title: "Website Institucional",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
     title: "Website E-Comerce",
     description: "Project 1 description",
     image: "/images/projects/1.png",
@@ -32,17 +15,9 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
+  
   {
-    id: 5,
-    title: "Website Personalizados",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
+    id: 2,
     title: "Aplicativo para Celular",
     description: "Project 2 description",
     image: "/images/projects/2.png",
@@ -51,7 +26,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 7,
+    id: 3,
     title: "Sistemas de backup",
     description: "Project 3 description",
     image: "/images/projects/3.png",
@@ -60,7 +35,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 8,
+    id: 4,
     title: "Automação de Sistemas",
     description: "Project 4 description",
     image: "/images/projects/4.png",
@@ -69,7 +44,7 @@ const projectsData = [
     previewUrl: "/",
   },
   {
-    id: 9,
+    id: 4,
     title: "Aplicativo de Gerenciamento",
     description: "Authentication and CRUD operations",
     image: "/images/projects/5.png",
@@ -120,7 +95,7 @@ const ServicesPriceSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Softwere"
+          name="Software"
           isSelected={tag === "Softwere"}
         />
         <ProjectTag

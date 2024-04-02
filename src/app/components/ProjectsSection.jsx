@@ -7,62 +7,62 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "Portifólio dev",
+    description: "Um portifólio digital onde o desenvolvedor pode mostrar os seus projetos",
     image: "/images/projects/1.png",
-    tag: ["Todos", "Web"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "Portifólio de fotografias",
+    description: "Um projeto feito para um fotografo que quis um portifólio virtual para enviar para seus clientes",
     image: "/images/projects/2.png",
-    tag: ["Todos", "Web"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "E-commerce",
+    description: "Projeto de um site de vendas para uma loja de roupas",
     image: "/images/projects/3.png",
-    tag: ["Todos", "Web"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
+    title: "Aplicação de um restaurante",
+    description: "Uma aplicação desenvolvida para um restaurante, para que os clientes tenham a opção de pedir online",
     image: "/images/projects/4.png",
-    tag: ["Todos", "Celular"],
+    tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
+    title: "template para o firebase",
+    description: "Uma interface que busca ajudar desenvolvedores ao trabalharem com o banco de dados FireBase da Google",
     image: "/images/projects/5.png",
-    tag: ["Todos", "Web"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
+    title: "Aplicação para organização",
+    description: "Um projeto desenvolvido para proporcionar organização pessoal e empresaria ",
     image: "/images/projects/6.png",
-    tag: ["Todos", "Web"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("Todos");
+  const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="Todos"
-          isSelected={tag === "Todos"}
+          isSelected={tag === "All"}
         />
         <ProjectTag
           onClick={handleTagChange}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="Celular"
-          isSelected={tag === "Celular"}
+          isSelected={tag === "Mobile"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
