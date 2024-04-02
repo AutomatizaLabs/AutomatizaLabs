@@ -96,7 +96,7 @@ const ServicesSection = () => {
               active={tab === "certifications"}
             >
               {" "}
-              Softweres{" "}
+              Softwares{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("automations")}
