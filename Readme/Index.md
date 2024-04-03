@@ -8,14 +8,14 @@ to help understanding the code part by part, bit by bit.
 ```
 
 
-1. [Main Page](./MainPage.md)
+1. [Main Page](./Pages/MainPage.md)
 
-2. [Sobre Page](./SobrePage.md)
+2. [Sobre Page](./Pages/SobrePage.md)
 
-3. [Projetos Page](./ProjetosPage.md)
+3. [Projetos Page](./Pages/ProjetosPage.md)
 
-4. [Serviços Page](./ServicosPage.md)
+4. [Serviços Page](./Pages/ServicosPage.md)
 
-5. [Contato Section](./ContatoSection.md)
+5. [Contato Section](./Pages/ContatoSection.md)
 
 6. [Components Index](./ComponentsIndex.md)

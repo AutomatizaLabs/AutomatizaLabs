@@ -39,7 +39,7 @@ Click in the link to see the documentation for each component
 * [Navbar]()
 * [HeroSection]()
 * [AchivementsSection]()
-* [AboutSection](./Components/AboutSection.md)
+* [AboutSection](../Components/AboutSection.md)
 * [ProjectsSection]()
 * [EmailSection]()
 * [Footer]()
