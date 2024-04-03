@@ -8,7 +8,7 @@ to help understanding the code part by part
 
 
 1. [About Section](./Components/AboutSection.md)
-2. [Achievements Section](/Components/AchievementsSection.md)
+2. [Achievements Section](./Components/AchievementsSection.md)
 3. [Email Section](./Components/EmailSection.md)
 4. [Footer](./Components/Footer.md)
 5. [Hero Section](./Components/HeroSection.md)
