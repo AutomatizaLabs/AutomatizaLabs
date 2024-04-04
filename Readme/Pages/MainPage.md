@@ -43,3 +43,5 @@ Click in the link to see the documentation for each component
 * [ProjectsSection]()
 * [EmailSection]()
 * [Footer]()
+
+[Return to Index ⏎](../Index.md)

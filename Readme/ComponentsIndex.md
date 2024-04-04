@@ -22,3 +22,7 @@ to help understanding the code part by part
 13. [Services Price Section](./Components/ServicesPriceSection.md)
 14. [Services Section](./Components/ServicesSection.md)
 15. [TabButton](./Components/TabButton.md)
+
+
+
+If you want to go back to the index, click on [Return ⏎](./Index.md)
