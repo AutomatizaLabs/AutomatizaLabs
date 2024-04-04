@@ -19,3 +19,5 @@ to help understanding the code part by part, bit by bit.
 5. [Contato Section](./Pages/ContatoSection.md)
 
 6. [Components Index](./ComponentsIndex.md)
+
+[Return to Readme ⏎](../README.md)
