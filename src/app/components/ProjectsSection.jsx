@@ -10,7 +10,7 @@ const projectsData = [
     title: "Portifólio dev",
     description: "Um portifólio digital onde o desenvolvedor pode mostrar os seus projetos",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
+    tag: ["Todos", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -19,7 +19,7 @@ const projectsData = [
     title: "Portifólio de fotografias",
     description: "Um projeto feito para um fotografo que quis um portifólio virtual para enviar para seus clientes",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
+    tag: ["Todos", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -28,7 +28,7 @@ const projectsData = [
     title: "E-commerce",
     description: "Projeto de um site de vendas para uma loja de roupas",
     image: "/images/projects/3.png",
-    tag: ["All", "Web"],
+    tag: ["Todos", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -37,7 +37,7 @@ const projectsData = [
     title: "Aplicação de um restaurante",
     description: "Uma aplicação desenvolvida para um restaurante, para que os clientes tenham a opção de pedir online",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
+    tag: ["Todos", "Celular"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -46,7 +46,7 @@ const projectsData = [
     title: "template para o firebase",
     description: "Uma interface que busca ajudar desenvolvedores ao trabalharem com o banco de dados FireBase da Google",
     image: "/images/projects/5.png",
-    tag: ["All", "Web"],
+    tag: ["Todos", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -62,7 +62,7 @@ const projectsData = [
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
+  const [tag, setTag] = useState("Todos");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="Todos"
-          isSelected={tag === "All"}
+          isSelected={tag === "Todos"}
         />
         <ProjectTag
           onClick={handleTagChange}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
         <ProjectTag
           onClick={handleTagChange}
           name="Celular"
-          isSelected={tag === "Mobile"}
+          isSelected={tag === "Celular"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
