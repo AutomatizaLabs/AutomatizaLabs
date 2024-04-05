@@ -1,7 +1,7 @@
 ## Main Page
 
 
-To create the main page we create the [layout.js](../src/app/layout.js) and the [page.js](../src/app/page.js), default by the nextjs 14 (framework used on the project), and in the page.js we have an architeture based on components, as you can see here: 
+To create the main page we create the [layout.js](../../src/app/layout.js) and the [page.js](../../src/app/page.js), default by the nextjs 14 (framework used on the project), and in the page.js we have an architeture based on components, as you can see here: 
 
 ``` js
 export default function Home() {
@@ -36,12 +36,12 @@ export default function RootLayout({ children }) {
 ```
 Click in the link to see the documentation for each component
 ```
-* [Navbar]()
-* [HeroSection]()
-* [AchivementsSection]()
+* [Navbar](../Components//Navbar.md)
+* [HeroSection](../Components/HeroSection.md)
+* [AchivementsSection](../Components/AchievementsSection.md)
 * [AboutSection](../Components/AboutSection.md)
-* [ProjectsSection]()
-* [EmailSection]()
-* [Footer]()
+* [ProjectsSection](../Components/ProjectsSection.md)
+* [EmailSection](../Components/EmailSection.md)
+* [Footer](../Components/Footer.md)
 
 [Return to Index ⏎](../Index.md)

@@ -1,7 +1,43 @@
 ## Serviços Page
 
+
+To create the Serviços page we create the [layout.js](../../src/app/servicos/layout.js) and the [page.js](../../src/app/servicos/page.js), default by the nextjs 14 (framework used on the project), and in the page.js we have an architeture based on components, as you can see here: 
+
+``` js
+export default function Servico() {
+  return (
+    <main className="flex min-h-screen flex-col bg-[#ffffff]">
+      <Navbar />
+      <div className="container mt-24 mx-auto px-12 py-4">
+        <ServicesSection />
+        <ServicesPriceSection />
+        <EmailSection />
+      </div>
+      <Footer />
+    </main>
+  );
+}
 ```
-This is servicos page doc
+and now see the layout component, only used to render the page.js
+
+``` js
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  )
+}
+
 ```
+## Components used in the code:
+```
+Click in the link to see the documentation for each component
+```
+* [Navbar](../Components//Navbar.md)
+* [Services Section](../Components/ServicesSection.md)
+* [Services Price Section](../Components/ServicesPriceSection.md)
+* [Email Section](../Components/EmailSection.md)
+* [Footer](../Components/Footer.md)
 
 [Return to Index ⏎](../Index.md)
