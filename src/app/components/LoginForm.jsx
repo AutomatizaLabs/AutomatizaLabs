@@ -26,7 +26,7 @@ export default function LoginForm() {
         try {
             const user = await signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value)
             if (user)
-                 router.push("/adminpanel")
+                router.push("/adminpanel")
         } catch (error) {
             toast({
                 description: "Não foi possível autenticar",
@@ -40,7 +40,6 @@ export default function LoginForm() {
     return (
         <Box
             h="100vh"
-            bg="blue.200"
             color="black"
             display="flex"
             alignItems="center"
@@ -64,13 +63,19 @@ export default function LoginForm() {
                             <Stack spacing="6">
                                 <Stack spacing="5">
                                     <FormControl>
-                                        <FormLabel htmlFor="email">E-mail</FormLabel>
-                                        <Input data-testid="email-input" id="email" type="email" ref={emailRef} />
+                                        <FormLabel color={"Black"} htmlFor="email">E-mail</FormLabel>
+                                        <Input required
+                                            className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                                            placeholder="seu@email.com" data-testid="email-input" id="email" type="email" ref={emailRef} />
                                     </FormControl>
-                                    <PasswordField data-testid="senha-input" ref={passRef} />
+                                    <PasswordField data-testid="senha-input" ref={passRef} required
+                                        className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                                        placeholder="Senha" />
                                 </Stack>
                                 <Stack spacing="6">
-                                    <Button colorScheme="blue" data-testid="login" type="submit" onClick={handleLogin}>Autenticar</Button>
+                                    <Button colorScheme="blue" data-testid="login" type="submit" onClick={handleLogin}
+                                        className="bg-[#18191E] border border-[#33353F] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                                    >Autenticar</Button>
                                 </Stack>
                             </Stack>
                         </form>

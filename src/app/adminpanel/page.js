@@ -5,6 +5,7 @@ import EmailSection from "../components/EmailSection";
 import Footer from "../components/Footer";
 import ProjectsSection from "../components/ProjectsSection";
 import useAuth from "../../../hook/useAuth";
+import Auth from '../components/Auth';
 
 export default function Adminpanel() {
   const { user } = useAuth(); // Use o hook useAuth
@@ -16,7 +17,7 @@ export default function Adminpanel() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#ffffff]">
-      <Navbar />
+      <Auth />
       <div className="container mt-24 mx-auto px-12 py-4">
         <ProjectsSection />
         <EmailSection />
