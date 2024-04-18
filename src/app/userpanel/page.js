@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import ProjectsSection from "../components/ProjectsSection";
 import useAuth from "../../../hook/useAuth";
 import Auth from '../components/Auth';
+import PainelUser from '../components/PainelUserNavBar';
 
 export default function UserPanel() {
   const { user } = useAuth(); // Use o hook useAuth
@@ -17,7 +18,7 @@ export default function UserPanel() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#ffffff]">
-      <Auth />
+      <PainelUser />
       <div className="container mt-24 mx-auto px-12 py-4">
         <ProjectsSection />
         <EmailSection />
