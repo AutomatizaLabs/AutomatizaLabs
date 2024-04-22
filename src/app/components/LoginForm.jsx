@@ -15,6 +15,7 @@ import { useRef } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../firebase'
 import { useRouter } from 'next/navigation'
+import Auth from './Auth';
 
 export default function LoginForm() {
     const emailRef = useRef(null);
@@ -25,8 +26,7 @@ export default function LoginForm() {
     async function handleLogin() {
         try {
             const user = await signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value)
-            if (user)
-                router.push("/adminpanel")
+            if (user) (Auth())
         } catch (error) {
             toast({
                 description: "Não foi possível autenticar",
@@ -49,7 +49,7 @@ export default function LoginForm() {
                 <Stack spacing="8">
                     <Stack spacing="6">
                         <Stack spacing={{ base: '2', md: '3' }} textAlign="center">
-                            <Heading size={{ base: 'xs', md: 'sm' }}>Painel Administrador</Heading>
+                            <Heading size={{ base: 'xs', md: 'sm' }}>Login</Heading>
                         </Stack>
                     </Stack>
                     <Box

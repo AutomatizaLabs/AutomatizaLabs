@@ -5,6 +5,7 @@ import { addConfig, checkUserExistence, getUserRole } from "./addUser";
 
 const useAuth = () => {
     const [user, setUser] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false)
     const [redirected, setRedirected] = useState(false);
     const router = useRouter();
 
@@ -27,11 +28,12 @@ const useAuth = () => {
                     }
                     const userRole = await getUserRole(authUser.uid);
                     if (userRole === "admin") {
-                        router.push("/adminpanel");
+                        setIsAdmin(true);
+                        router.push("/panel")
                     } else {
-                        router.push("/userpanel");
+                        setIsAdmin(false);
+                        router.push("/panel")
                     }
-
                 } catch (error) {
                     console.error("Error adding config:", error);
                 }
@@ -41,7 +43,7 @@ const useAuth = () => {
         return () => unsubscribe();
     }, [redirected, router]);
 
-    return { user };
+    return { user, isAdmin };
 };
 
 export default useAuth;
