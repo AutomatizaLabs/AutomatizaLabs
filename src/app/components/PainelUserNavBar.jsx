@@ -9,7 +9,7 @@ import {
 import { auth } from "../../../firebase";
 import useAuth from "../../../hook/useAuth"
 
-const PainelUser = () => {
+const PainelUserNavBar = () => {
     const { user } = useAuth();
 
     return (
@@ -27,4 +27,4 @@ const PainelUser = () => {
     );
 };
 
-export default PainelUser;
+export default PainelUserNavBar;
