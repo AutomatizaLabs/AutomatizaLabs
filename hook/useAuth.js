@@ -29,10 +29,10 @@ const useAuth = () => {
                     const userRole = await getUserRole(authUser.uid);
                     if (userRole === "admin") {
                         setIsAdmin(true);
-                        router.push("/panel")
+                        router.push("/painel")
                     } else {
                         setIsAdmin(false);
-                        router.push("/panel")
+                        router.push("/painel")
                     }
                 } catch (error) {
                     console.error("Error adding config:", error);
