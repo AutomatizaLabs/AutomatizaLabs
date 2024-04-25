@@ -6,8 +6,8 @@ import Footer from "../components/Footer";
 import ProjectsSection from "../components/ProjectsSection";
 import useAuth from "../../../hook/useAuth";
 import Auth from '../components/Auth';
-import PainelUser from '../components/PainelUserNavBar';
-import PainelAdmin from '../components/PainelAdmNavBar';
+import PainelUserNavBar from '../components/PainelUserNavBar';
+import PainelAdminNavBar from '../components/PainelAdmNavBar';
 
 export default function UserPanel() {
   const { user, isAdmin } = useAuth();
@@ -19,7 +19,7 @@ export default function UserPanel() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#ffffff]">
-      {isAdmin ? <PainelAdmin /> : <PainelUser />}
+      {isAdmin ? <PainelAdminNavBar /> : <PainelUserNavBar />}
       <div className="container mt-24 mx-auto px-12 py-4">
         <ProjectsSection />
         <EmailSection />
