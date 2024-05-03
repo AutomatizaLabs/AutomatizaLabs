@@ -171,77 +171,74 @@ export default function ModalTodo({ isOpen, onClose }) {
     }
 
     return (
-        <Box>
-
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent style={{ borderRadius: "12px", overflow: "hidden", backgroundColor: "gray", maxWidth: "400px", paddingTop: "100px" }}>
-                    <ModalHeader display="flex " alignItems="center" gap={20}>
-                        {isEdit ? "Editar Registro" : "Criar Registro"}
-                        <Text color="red" fontSize={10}> *Obrigatório</Text>
-                    </ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <Stack spacing={4}>
-                            <FormInput value={city} inputprops={{ maxLength: 50 }} label={"Cidade"} setValue={setCity} isRequired />
-                            <FormInput value={company} inputprops={{ maxLength: 50 }} label={"Empresa"} setValue={setCompany} isRequired />
-                            <Stack direction="row">
-                                <Box flex={1}>
-                                    <Text fontSize="sm">
-                                        Status <span style={{ color: '#feb2b2' }}>*</span>
-                                    </Text>
-                                    <Select
-                                        color={"black"}
-                                        data-testid="status"
-                                        value={statusId}
-                                        onChange={(e) => {
-                                            setStatus(statusMap[e.target.value].status);
-                                            setStatusId(e.target.value);
-                                        }}
-                                    >
-                                        {statusOptions.map((option) =>
-                                            <option key={option.statusId} value={option.statusId} style={{ fontWeight: "bold" }}>
-                                                {option.status}
-                                            </option>
-                                        )}
-                                    </Select>
-                                </Box>
-                                <FormInput value={displayDate} label={"Data de Realização"} setValue={setDisplayDate} type="date" isRequired />
-                            </Stack>
-                            <FormInput value={executionDate} label={"Data de Exibição"} setValue={setExecutionDate} />
-                            <FormInput value={observation} label={"Observação"} setValue={setObservation} type="textarea" />
-                            <Text fontSize="sm">Cor</Text>
-                            <RadioGroup value={color} onChange={(e) => setColor(e)}>
-                                <Stack direction="row">
-                                    {colorOptions.map(color =>
-                                        <Radio
-                                            key={color.value}
-                                            value={color.value}
-                                            colorScheme={color.value === "white" ? "gray" : color.value}
-                                        >
-                                            {color.label}
-                                        </Radio>
+        <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent style={{ marginTop: 0, marginBottom: 0, margin: 'auto' }}>
+                <ModalHeader display="flex " alignItems="center" gap={2}>
+                    {isEdit ? "Editar Registro" : "Criar Registro"}
+                    <Text color="red.200" fontSize={10}> *Obrigatório</Text>
+                </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                    <Stack direction="column">
+                        <FormInput value={city} inputprops={{ maxLength: 50 }} label={"Cidade"} setValue={setCity} isRequired />
+                        <FormInput value={company} inputprops={{ maxLength: 50 }} label={"Empresa"} setValue={setCompany} isRequired />
+                        <Box display="flex" gap={2} alignItems="center">
+                            <Box display="flex" gap={2} width="100%" flexDirection="column">
+                                <Text fontSize="sm">
+                                    Status <span style={{ color: '#feb2b2' }}>*</span>
+                                </Text>
+                                <Select
+                                    data-testid="status"
+                                    value={statusId}
+                                    onChange={(e) => {
+                                        setStatus(statusMap[e.target.value].status);
+                                        setStatusId(e.target.value);
+                                    }}
+                                >
+                                    {statusOptions.map((option) =>
+                                        <option key={option.statusId} value={option.statusId} style={{ fontWeight: "bold" }}>
+                                            {option.status}
+                                        </option>
                                     )}
-                                </Stack>
-                            </RadioGroup>
-                        </Stack>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button
-                            data-testid="salvar"
-                            isLoading={isLoading}
-                            onClick={() => {
-                                if (selectedId) saveTodo();
-                                else handleTodoCreate();
-                            }}
-                            isDisabled={!isFormValid}
-                            variant="solid"
-                        >
-                            Salvar
-                        </Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal >
-        </Box>
+                                </Select>
+                            </Box>
+                            <FormInput value={displayDate} label={"Data de Realização"} setValue={setDisplayDate} type="date" isRequired />
+                        </Box>
+                        <FormInput value={executionDate} label={"Data de Exibição"} setValue={setExecutionDate} />
+                        <FormInput value={observation} label={"Observação"} setValue={setObservation} type="textarea" />
+                        <Text fontSize="sm">Cor</Text>
+                        <RadioGroup value={color} onChange={(e) => setColor(e)}>
+                            <Stack direction="row">
+                                {colorOptions.map(color =>
+                                    <Radio
+                                        data-testid={color.value}
+                                        key={color.value}
+                                        value={color.value}
+                                        colorScheme={color.value === "white" ? "gray" : color.value}
+                                    >
+                                        {color.label}
+                                    </Radio>
+                                )}
+                            </Stack>
+                        </RadioGroup>
+                    </Stack>
+                </ModalBody>
+                <ModalFooter>
+                    <Button
+                        data-testid="salvar"
+                        isLoading={isLoading}
+                        onClick={() => {
+                            if (selectedId) saveTodo();
+                            else handleTodoCreate();
+                        }}
+                        isDisabled={!isFormValid}
+                        variant="solid"
+                    >
+                        Salvar
+                    </Button>
+                </ModalFooter>
+            </ModalContent>
+        </Modal >
     );
 }

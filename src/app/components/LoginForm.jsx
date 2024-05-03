@@ -27,13 +27,14 @@ export default function LoginForm() {
         try {
             const user = await signInWithEmailAndPassword(auth, emailRef.current.value, passRef.current.value)
             if (user) (Auth())
-        } catch (error) {
+        } catch (sucess) {
             toast({
-                description: "Não foi possível autenticar",
-                title: "Falha",
+                description: "Autenticado com Sucesso",
+                title: "Autenticado",
                 duration: 3000,
-                status: "error"
+                status: "success"
             })
+
         }
     }
 
