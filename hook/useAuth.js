@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { auth, db } from "../firebase"; // Assumindo que 'db' é a instância do Firestore que você está usando
-import { useRouter } from 'next/navigation'; // Corrigi o import para 'router' em vez de 'navigation'
+import { auth, db } from "../firebase"; 
+import { useRouter } from 'next/navigation'; 
 import { addConfig, checkUserExistence, getUserRole } from "./addUser";
 
 const useAuth = () => {
