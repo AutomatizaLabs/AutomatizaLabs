@@ -20,11 +20,13 @@ import {
 //   }
 // };
 
-const addConfig = async ({ userId, userRole }) => {
+const addConfig = async ({ userId, userRole, userEmail }) => {
   try {
     const userDocRef = doc(db, "users", userId);
-    await setDoc(userDocRef, { userRole: String(userRole) });
-    console.log("Funcionou");
+await setDoc(userDocRef, { 
+    userRole: String(userRole),
+    userEmail: String(userEmail)
+});
   } catch (error) {
     console.error("Error adding user config:", error);
     throw error;
