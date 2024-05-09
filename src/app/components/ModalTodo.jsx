@@ -24,13 +24,13 @@ import useAuth from "../../../hook/useAuth";
 
 const statusOptions = [
     { statusId: "", status: "" },
-    { statusId: "1", status: "Não lançado" },
-    { statusId: "2", status: "Lançado" },
-    { statusId: "3", status: "Em aberto" },
-    { statusId: "4", status: "Encerrado" },
+    { statusId: "1", status: "Em análise" },
+    { statusId: "2", status: "Em preparação" },
+    { statusId: "3", status: "Em desenvolvimento" },
+    { statusId: "4", status: "Concluido" },
     { statusId: "5", status: "Suspenso" },
-    { statusId: "6", status: "Revogado" },
-    { statusId: "7", status: "Homologado" }
+    { statusId: "6", status: "Problema no Pagamento" },
+    { statusId: "7", status: "Encerado" }
 ];
 
 const statusMap = Object.fromEntries(statusOptions.map(option => [option.statusId, option]))
@@ -51,6 +51,7 @@ export default function ModalTodo({ isOpen, onClose }) {
 
     const [status, setStatus] = useState("");
     const [statusId, setStatusId] = useState(""); // Adicione o campo statusID
+    const [userEmail, setUserEmail] = useState("");
     const [city, setCity] = useState("");
     const [company, setCompany] = useState("");
     const [displayDate, setDisplayDate] = useState("");
@@ -62,6 +63,7 @@ export default function ModalTodo({ isOpen, onClose }) {
 
     const isFormValid =
         city.length > 0 &&
+        userEmail.length > 0 &&
         company.length > 0 &&
         displayDate.length > 0 &&
         statusId !== "";
@@ -72,6 +74,7 @@ export default function ModalTodo({ isOpen, onClose }) {
             const statusId = statusHandler(todoData.statusId, todoData.status)
             setStatus(todoData.status);
             setStatusId(statusId);
+            setUserEmail(todoData.userEmail)
             setCity(todoData.city);
             setCompany(todoData.company);
             setDisplayDate(todoData.displayDate);
@@ -92,6 +95,7 @@ export default function ModalTodo({ isOpen, onClose }) {
                 statusId,
                 city,
                 company,
+                userEmail,
                 displayDate,
                 executionDate,
                 observation,
@@ -123,6 +127,7 @@ export default function ModalTodo({ isOpen, onClose }) {
             userId: user.uid,
             city,
             company,
+            userEmail,
             displayDate,
             executionDate,
             observation,
@@ -147,6 +152,7 @@ export default function ModalTodo({ isOpen, onClose }) {
         setStatus("");
         setStatusId("");
         setCity("");
+        setUserEmail("");
         setCompany("");
         setDisplayDate("");
         setExecutionDate("");
@@ -181,6 +187,7 @@ export default function ModalTodo({ isOpen, onClose }) {
                 <ModalCloseButton />
                 <ModalBody>
                     <Stack direction="column">
+                        <FormInput value={userEmail} inputprops={{ maxLength: 50 }} label={"Email do Cliente"} setValue={setUserEmail} isRequired />
                         <FormInput value={city} inputprops={{ maxLength: 50 }} label={"Cidade"} setValue={setCity} isRequired />
                         <FormInput value={company} inputprops={{ maxLength: 50 }} label={"Empresa"} setValue={setCompany} isRequired />
                         <Box display="flex" gap={2} alignItems="center">
