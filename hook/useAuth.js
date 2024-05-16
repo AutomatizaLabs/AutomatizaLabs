@@ -22,6 +22,7 @@ const useAuth = () => {
 
                         await addConfig({
                             userId: authUser.uid, 
+                            userEmail: authUser.email,
                             userRole: "user"
                         });
                         return

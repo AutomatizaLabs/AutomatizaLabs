@@ -46,6 +46,7 @@ const TodoListedit = () => {
                 todo.city.toLowerCase().includes(searchText) ||
                 todo.company.toLowerCase().includes(searchText) ||
                 todo.displayDate.includes(searchText) ||
+                todo.userEmail.includes(searchText) ||
                 todo.status.toLowerCase().includes(searchText)
             );
         });
@@ -153,7 +154,7 @@ const TodoListedit = () => {
                             <Tr style={{ color: "black " }}>
                                 <Th>Ações</Th>
                                 <Th>Data de Realização</Th>
-                                <Th>Cidade</Th>
+                                <Th>Email</Th>
                                 <Th>Empresa</Th>
                                 <Th>Status</Th>
                             </Tr>
@@ -165,7 +166,7 @@ const TodoListedit = () => {
                                         <Box display="flex">
                                             <Badge
                                                 bg={getDarkerColorForTodo(todo.color)}
-                                                data-testid={`Delete${todo.city}`}
+                                                data-testid={`Delete${todo.userEmail}`}
                                                 padding={2}
                                                 color={color}
                                                 transition="0.2s"
@@ -183,7 +184,7 @@ const TodoListedit = () => {
                                                 bg={getDarkerColorForTodo(todo.color)}
                                                 padding={2}
                                                 float="right"
-                                                data-testid={`Edit${todo.city}`}
+                                                data-testid={`Edit${todo.userEmail}`}
                                                 color={color}
                                                 opacity="0.8"
                                                 ml={2}
@@ -204,7 +205,7 @@ const TodoListedit = () => {
                                         </Box>
                                     </Td>
                                     <Td>{todo.displayDate}</Td>
-                                    <Td>{todo.city}</Td>
+                                    <Td>{todo.userEmail}</Td>
                                     <Td>{todo.company}</Td>
                                     <Td>{todo.status}</Td>
                                 </Tr>
