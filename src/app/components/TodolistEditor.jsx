@@ -16,7 +16,7 @@ import {
 import useAuth from "../../../hook/useAuth";
 import { FaTrash } from "react-icons/fa6";
 import { MdEditSquare } from "react-icons/md";
-import { deleteTodo, toggleTodoStatus } from "../api/send/todo";
+import { deleteTodo, toggleTodoStatus } from "../../../api/send/todo";
 import { useModalContext } from "../contexts/ModalContext";
 import useTodo from "../../../hook/useTodos";
 
