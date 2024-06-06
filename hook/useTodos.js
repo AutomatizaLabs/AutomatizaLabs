@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "./useAuth";
-import { fetchTodos } from "../src/app/api/send/todo";
+import { fetchTodos } from "../api/send/todo";
 
 export default function useTodo() {
     const [todos, setTodos] = useState([])

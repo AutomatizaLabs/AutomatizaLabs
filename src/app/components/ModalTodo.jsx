@@ -17,7 +17,7 @@ import {
     useToast,
 } from "@chakra-ui/react";
 import FormInput from "./FormInput";
-import { updateTodo, addTodo } from "../api/send/todo";
+import { updateTodo, addTodo } from "../../../api/send/todo";
 import useTodo from "../../../hook/useTodos";
 import { useModalContext } from "../contexts/ModalContext";
 import useAuth from "../../../hook/useAuth";
